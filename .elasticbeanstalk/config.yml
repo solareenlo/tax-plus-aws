@@ -1,0 +1,9 @@
+branch-defaults:
+  master:
+    environment: $master-TaxPlusAws01-env
+global:
+  application_name: tax-plus-aws-01
+  default_ec2_keyname: XXXXXX
+  default_platform: 64bit Amazon Linux 2017.09 v2.6.2 running Ruby 2.4 (Passenger Standalone)
+  default_region: ap-northeast-1
+  sc: git
