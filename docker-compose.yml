@@ -1,0 +1,13 @@
+version: '3'
+services:
+  node:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: ash -c "npm run dev"
+    environment:
+      NODE_ENV: development
+    ports:
+      - '3001:3000'
+    volumes:
+      - .:/app

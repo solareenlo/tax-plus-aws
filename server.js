@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const http = require('http');
 const debug = require('debug')('node-angular');
 const app = require('./app');
@@ -40,10 +41,16 @@ const onListening = () => {
   debug('Listening on ' + bind);
 };
 
-const port = normalizePort(process.env.PORT || `3005`);
+const port = normalizePort(process.env.PORT || `3000`);
 app.set('port', port);
 
 const server = http.createServer(app);
 server.on('error', onError);
 server.on('listening', onListening);
-server.listen(port);
+server.listen(app.get('port'), () => {
+  console.log(
+    '%s http://localhost:%d で動いています.',
+    chalk.green('✓'),
+    app.get('port')
+  );
+});
