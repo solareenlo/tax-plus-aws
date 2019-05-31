@@ -14,11 +14,16 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
       - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
           name: Install Project
           command: npm install
-      - run:
-          name: Build
-          commnad: npm run build
+      # - run:
+      #     name: Build
+      #     commnad: npm run build
       # - run:
       #     name: Check dist
       #     command: ls -la dist
