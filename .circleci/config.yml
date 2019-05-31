@@ -16,16 +16,16 @@ jobs:
       - run:
           name: Install Project
           command: npm install
-      - run:
-          name: Build
-          commnad: npm run tsc
-      - run:
-          name: Check dist
-          command: ls -la dist
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+      # - run:
+      #     name: Build
+      #     commnad: npm run tsc
+      # - run:
+      #     name: Check dist
+      #     command: ls -la dist
+      # - save_cache:
+      #     paths:
+      #       - node_modules
+      #     key: v1-dependencies-{{ checksum "package.json" }}
       # run tests!
       # - run: yarn test
 #   deploy:
