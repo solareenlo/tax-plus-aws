@@ -17,16 +17,16 @@ jobs:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: v1-dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install Project
           command: npm install
       # - run:
       #     name: Build
       #     commnad: npm run build
-      # - run:
-      #     name: Check dist
-      #     command: ls -la dist
+      - run:
+          name: Check dist
+          command: ls -la dist
       # - save_cache:
       #     paths:
       #       - node_modules
