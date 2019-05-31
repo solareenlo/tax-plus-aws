@@ -29,6 +29,8 @@ jobs:
           name: Build
           command: npm run build
       - run:
+          command: 'sed -i -e "/\/dist/d" .gitignore'
+      - run:
           name: Check dist
           command: ls -la dist
       - save_cache:
