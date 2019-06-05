@@ -1,4 +1,4 @@
-FROM node:10.15.3-alpine
+FROM node:10.16.0-alpine
 ENV APP_ROOT /app/
 
 WORKDIR $APP_ROOT
